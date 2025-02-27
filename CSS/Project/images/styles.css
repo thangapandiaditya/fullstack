@@ -1,0 +1,115 @@
+:root{
+    --color-primary:#2979FF;
+    --color-secondary:#00E5FF;
+    --color-accent:#FF3D00;
+    --color-headings:#4A148C;
+    --color-body:#6e6c6c;
+}
+
+/* beg of typography */
+html{
+    font-size: 10px;
+}
+body{
+    font-family: "inter", Arial, Helvetica, sans-serif;
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: var(--color-body);
+}
+h1,h2,h3{
+    color: var(--color-headings);
+    font-weight:700;
+}
+h1{
+    font-size: 7rem;
+}
+h2{
+    font-size:4rem;
+}
+h3{
+    font-size: 3rem;
+}
+/* end of typography */
+
+/* beg of arrow-link */
+.arrow-link{
+    text-transform: uppercase;
+    color: var(--color-accent);
+    font-weight: 700;
+    text-decoration: none;
+}
+.arrow-link::after{
+    content: "-->";
+    margin-left:5px;
+    transition: all 0.2s;
+}
+.arrow-link:hover::after{
+    margin-left: 10px;
+}
+
+/* end of arrow-link */
+
+/* beg of badge */
+.badge{
+    font-weight: 700;
+    color: white !important;
+    padding: 1.2rem 2rem;
+    border-radius: 20px;
+    margin: 5px;
+}
+.badge-primary{
+    background-color: var(--color-primary);
+}
+.badge-secondary{
+    background-color: var(--color-secondary);
+}
+.badge-small{
+    padding: 1rem 1.5rem;
+    filter: grayscale(70%);
+}
+/* end of badge */
+
+/* beg of lists */
+.list-vert{
+     list-style-image: url(../images/tick.svg);
+}
+.list-vert-item{
+    color: var(--color-headings);
+    margin: 10px 0px;
+    font-weight: 500;
+    
+}
+.list-horiz{
+    list-style: none;
+    padding-left: 0px;
+
+}
+.list-horiz-item{
+    display: inline-block;
+    margin: 1.5rem 2rem;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-headings);
+
+}
+/* end of lists */
+
+/* beg of buttons */
+.btn{
+    padding: 1.5rem 5rem;
+    border-radius: 50px;
+    font-size: 1.8rem;
+    font-weight:500;
+}
+.btn-accent{
+    background-color: var(--color-accent);
+    color: white;
+    border: 0px transparent;
+    
+}
+.btn-outline{
+    border: 1px solid var(--color-headings);
+    color: var(--color-headings);
+}
+/* end of buttons */
+
