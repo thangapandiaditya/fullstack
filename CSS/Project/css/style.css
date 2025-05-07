@@ -1,6 +1,6 @@
 :root{
     --primary-color:#121948;
-    --secondary-color:#00E5FF;
+    --secondary-color:#1acce0;
     --third-color:#D32F2F;
     --fourth-color:#757575;
     --fifth-color:#1565C0;
@@ -538,7 +538,7 @@ p{
     text-align: center;
     color: white;
     margin-bottom: 1%;
-    margin-top: 30%;
+    margin-top: 10%;
 }
 .hero-cont p{
     text-align: center;
@@ -553,8 +553,8 @@ p{
     background-color: white;
     color:black;
 }
-.hero-img{
+.hero-img img{
     margin-bottom: 20%;
-    width:100%;
+    width:70%
+  
 }
-

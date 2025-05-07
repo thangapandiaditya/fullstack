@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f8f8f8;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            color: white;
+            padding: 15px 30px;
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            position: relative;
+            margin: 0 15px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 12px;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            background: #555;
+            border-radius: 5px;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            background: #fff;
+        }
+        .hero-text {
+            max-width: 50%;
+        }
+        .hero-text h1 {
+            font-size: 40px;
+            color: #333;
+            animation: slideInLeft 1s ease-in-out;
+        }
+        .hero-text p {
+            font-size: 18px;
+            color: #666;
+            margin-top: 10px;
+            animation: slideInLeft 1.2s ease-in-out;
+        }
+        .hero-images {
+            display: grid;
+            grid-template-columns: repeat(2, 100px);
+            grid-gap: 10px;
+            transform: rotate(45deg);
+        }
+        .hero-images img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            object-fit: cover;
+            transform: rotate(-45deg);
+        }
+        .food-details {
+            display: none;
+            padding: 50px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        .food-details img {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .food-info {
+            max-width: 50%;
+        }
+        .food-details.active {
+            display: flex;
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" data-aos="fade-down">
+        <div class="logo">Restaurant Name</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products ▼</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Welcome to Our Restaurant</h1>
+            <p>Experience the best dishes made with love and the freshest ingredients.</p>
+        </div>
+        <div class="hero-images">
+            <img src="burger.jpg" alt="Burger">
+            <img src="pizza.jpg" alt="Pizza">
+            <img src="sushi.jpg" alt="Sushi">
+            <img src="salad.jpg" alt="Salad">
+        </div>
+    </section>
+    
+    <section class="food-list" data-aos="zoom-in">
+        <h2>Our Special Dishes</h2>
+        <div class="food-items">
+            <div class="food-item" onclick="showDetails('burger')">🍔 Burger</div>
+            <div class="food-item" onclick="showDetails('pizza')">🍕 Pizza</div>
+            <div class="food-item" onclick="showDetails('sushi')">🍣 Sushi</div>
+            <div class="food-item" onclick="showDetails('salad')">🥗 Salad</div>
+        </div>
+    </section>
+
+    <section id="burger" class="food-details">
+        <img src="burger.jpg" alt="Burger">
+        <div class="food-info">
+            <h2>Burger</h2>
+            <p>Delicious grilled burger with fresh ingredients.</p>
+            <p>Price: $10</p>
+            <button>Buy Now</button>
+        </div>
+    </section>
+    <section id="pizza" class="food-details">
+        <img src="pizza.jpg" alt="Pizza">
+        <div class="food-info">
+            <h2>Pizza</h2>
+            <p>Cheesy and tasty pizza with fresh toppings.</p>
+            <p>Price: $12</p>
+            <button>Buy Now</button>
+        </div>
+    </section>
+    <section id="sushi" class="food-details">
+        <img src="sushi.jpg" alt="Sushi">
+        <div class="food-info">
+            <h2>Sushi</h2>
+            <p>Authentic Japanese sushi with premium seafood.</p>
+            <p>Price: $15</p>
+            <button>Buy Now</button>
+        </div>
+    </section>
+    <section id="salad" class="food-details">
+        <img src="salad.jpg" alt="Salad">
+        <div class="food-info">
+            <h2>Salad</h2>
+            <p>Healthy and fresh salad with organic ingredients.</p>
+            <p>Price: $8</p>
+            <button>Buy Now</button>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        function showDetails(foodId) {
+            document.querySelectorAll('.food-details').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(foodId).classList.add('active');
+            window.scrollTo({ top: document.getElementById(foodId).offsetTop, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

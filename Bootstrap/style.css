@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #75a107;
+    color: white;
+    padding: 10px 20px;
+}
+
+.header-left h1 {
+    margin: 0;
+}
+
+.header-right nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.header-right nav ul li {
+    margin-left: 20px;
+}
+
+.header-right nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.header-right nav ul li.search-icon {
+    cursor: pointer;
+    position: relative;
+}
+
+.search-dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    z-index: 1;
+    margin-top: 10px;
+}
+
+.search-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.search-dropdown ul li {
+    padding: 10px;
+}
+
+.search-dropdown ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+.search-icon:hover {
+    color: #ffcc00; /* Change color on hover */
+}
+
+.search-icon:hover + .search-dropdown {
+    display: block; /* Show dropdown on hover */
+}
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #020202; /* Light background for contrast */
+    overflow: hidden; /* Prevent overflow from animations */
+    color:white;
+}
+
+.hero-left {
+    flex: 1;
+    padding-right: 20px;
+    opacity: 0; /* Start hidden for animation */
+    transform: translateY(20px); /* Start slightly lower */
+    animation: fadeInUp 0.8s forwards; /* Animation for text */
+}
+
+.hero-left h2 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.hero-left p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.rhombus-image {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    margin: 10px;
+    transform: rotate(45deg); /* Rotate to create rhombus shape */
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.rhombus-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the area */
+    transform: rotate(-45deg); /* Rotate back to normal */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.rhombus-image:hover {
+    transform: scale(1.1) rotate(45deg); /* Scale up on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+/* Animation for the text */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
