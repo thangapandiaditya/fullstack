@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test POST API</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #response {
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Test POST API: /api/second-api</h2>
+  <button onclick="testApi()">Send POST Request</button>
+
+  <div id="response"></div>
+
+  <script>
+    function testApi() {
+      fetch('http://localhost:8080/api/second-api', {
+        method: 'POST'
+      })
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('response').textContent = 'Response: ' + data;
+      })
+      .catch(error => {
+        document.getElementById('response').textContent = 'Error: ' + error;
+      });
+    }
+  </script>
+
+</body>
+</html>

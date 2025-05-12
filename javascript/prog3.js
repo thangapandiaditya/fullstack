@@ -1,14 +1,16 @@
-x={
-    name:"John",
-    age:30,
-    city:"New York"
+function Employee(name,sal,mgr){
+    this.name=name;
+    this.sal=sal;
+    this.mgr=mgr;
 }
-console.log(x.name);
-console.log(x.age);
-console.log(x["city"]);
-for (let i in x){
-    console.log(i,x[i]);
+function Aditya(name,age){
+    this.name=name;
 }
-for (let i of Object.keys(x)){
-    console.log(i,x[i]);
-}
+let c1=new Employee("aditya",10000,"block");
+let c2=new Employee("vyshu",20000,"block");
+let c3=new Aditya(function(name,age){
+    return name("aditya");
+})
+console.log(c1);
+console.log(c2);
+console.log(c3);
