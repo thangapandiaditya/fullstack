@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <form >
+            <input type="text" name="text1" id="text1" value="hello">
+            <br><br>
+            <input type="text" name="" id="text2" value="eveyone">
+            <br><br>
+            <button onclick="swap()">Click here for Swap</button>
+        </form>
+    </center>
+    <script>
+        function swap(){
+            let t1=document.getElementById("text1");
+             let t2=document.getElementById("text2");
+             let temp=t1.value;
+             t1.value=t2.value;
+            t2.value=temp;  
+            
+
+        }
+    </script>
+    
+</body>
+</html>
